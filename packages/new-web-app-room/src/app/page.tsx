@@ -68,18 +68,18 @@ export default function TodoApp() {
   const activeCount = todos.length - completedCount;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-lime-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-2xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent neon-green-text-glow">
             Modern Todo
           </h1>
           <p className="text-slate-300 text-lg">Stay organized with style</p>
@@ -95,12 +95,12 @@ export default function TodoApp() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && addTodo()}
                 placeholder="What needs to be done?"
-                className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-300"
               />
             </div>
             <button
               onClick={addTodo}
-              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+              className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-2xl font-semibold hover:from-green-600 hover:to-emerald-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/25 neon-green-glow"
             >
               Add
             </button>
@@ -116,8 +116,8 @@ export default function TodoApp() {
                 onClick={() => setFilter(filterType)}
                 className={`px-6 py-2 rounded-xl font-medium transition-all duration-300 capitalize ${
                   filter === filterType
-                    ? 'bg-white text-slate-900 shadow-lg'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-white shadow-lg neon-green-glow'
+                    : 'text-slate-300 hover:text-green-300'
                 }`}
               >
                 {filterType}
@@ -141,7 +141,7 @@ export default function TodoApp() {
             filteredTodos.map((todo) => (
               <div
                 key={todo.id}
-                className={`group flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:border-white/30 ${
+                className={`group flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:border-green-400/50 hover:shadow-green-400/20 hover:shadow-lg ${
                   todo.completed ? 'opacity-75' : ''
                 }`}
               >
@@ -149,8 +149,8 @@ export default function TodoApp() {
                   onClick={() => toggleTodo(todo.id)}
                   className={`flex-shrink-0 w-6 h-6 rounded-full border-2 transition-all duration-300 ${
                     todo.completed
-                      ? 'bg-gradient-to-r from-green-400 to-emerald-500 border-green-400'
-                      : 'border-slate-400 hover:border-purple-400'
+                      ? 'bg-gradient-to-r from-green-400 to-emerald-500 border-green-400 shadow-lg shadow-green-400/50'
+                      : 'border-slate-400 hover:border-green-400 hover:shadow-green-400/30 hover:shadow-md'
                   }`}
                 >
                   {todo.completed && (
@@ -205,4 +205,14 @@ export default function TodoApp() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
 
